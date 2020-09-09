@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="page-master-container">
         <!-- Main Header -->
         <div id="header"></div>
         <!-- Main Header END-->
@@ -24,23 +24,21 @@
         <div id="sidebar">
         <!-- Sidebar OutSide Wrapper -->
                 <div class="sidebar-box">
-                        <!-- Sidebar Inner Wrapper -->
-                        <div class="row sidebar-wrapper">
                             <!-- Sidebar contents -->
                             <div class="col-12 sidebar-content">
                                 <div class="row">
                                     <!-- Sidebar Header Box -->
-                                    <div class="col-12 ">
-                                        <ul class="list-header d-flex justify-content-between align-items-center p-2 list-unstyled">
+                                    <div class="col-12 p-0">
+                                        <ul class="list-header d-flex justify-content-between align-items-center list-unstyled">
                                             <li class="d-lg-none"><btn class="mobile-view-toggler-off"><span class="fa fa-arrow-left"></span></btn></li>
                                             <li class="h2 my-auto">
                                                 Filters
                                             </li>
-                                            <li><span class=" resetText">RESET</span></li>
+                                            <li><span class="resetText">RESET</span></li>
                                         </ul>
                                     </div>
                                     <!-- Filter Form-->
-                                    <form class="container-fluid">
+                                    <form class="container-fluid p-0">
                                         <div class="col-12">
                                             <div class="row">
                                                 <!-- Filter 1 --CHannel -->
@@ -126,7 +124,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Filters 4 Insurance-->
-                                                <div class="filters col-12">
+                                                <div class="filters col-12 pb-md-3 pb-lg-3">
                                                     <label class="h2">Insurance Parameters</label>
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12">
@@ -150,17 +148,23 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <div class="d-block ApplyFilters">
+                                            <div class="d-flex h-100 p-3 align-items-center">
+                                                <button class="btn w-100">
+                                                    APPLY FILTERS
+                                                </button>
+                                            </div>
+                                    </div>
                                     <!--Filter Form End-->
                                 </div>
                             </div>
                             <!-- Sidebar Contents End-->
-                        </div>
-                        <!--Sidebar Inner Wrapper End-->
                 </div>
         <!--Sidebar Outside Wrapper End-->
         </div>
         <!-- SideBar End-->
-        <div class="body container-fluid pl-2 pr-2">
+
+        <div class="page-base-container container-fluid pl-2 pr-2">
             <!-- Inner Container-->
             <div class="container-fluid view">
                 <!-- Layer 1-->
@@ -174,7 +178,7 @@
                                     </div>
                                 </div>           
                                 <div >
-                                    <div class="position-absolute" style="max-width:160px; height: 100%; right: 6%">
+                                    <div class="position-absolute ilustrated-img" style="max-width:180px; height: 100%; right: 3%">
                                         <img src="assets/images/Illustration.png" width="100%" height='100%' alt="illustration">
                                     </div>
                                 </div>
@@ -204,6 +208,7 @@
                                 <div><span class="h2">Reporting</span></div>
                                 <div>
                                     <button class="resetText btn">RESET</button>
+                                    <btn class="btn report-toggler"><span class="fa fa-angle-down"></span></btn>
                                 </div>
                             </div>
                             <!--Card header-->
@@ -215,10 +220,10 @@
                                         <div class="h2">Report Period</div>                                        
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn mr-2 mr-lg-0">Current Month</button>
-                                            <button class="btn mr-2 mr-lg-0">Last Month</button>
-                                            <button class="btn mr-2 mr-lg-0">Current Year</button>
-                                            <button class="btn mr-2">Last Year</button>
+                                            <button class="btn mt-1 mt-sm-0 mr-2 mr-lg-0" id="defaultMonthButton">Current Month</button>
+                                            <button class="btn mt-1 mt-sm-0 mr-2 mr-lg-0">Last Month</button>
+                                            <button class="btn mt-1 mt-sm-0 mr-2 mr-lg-0">Current Year</button>
+                                            <button class="btn mt-1 mt-sm-0 mr-2">Last Year</button>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-12 col-xl-7 pt-0 pt-md-2">
@@ -269,14 +274,15 @@
                 </div>
                 <!-- Report Card End-->
                 <!-- Table Layout Card-->
-                <div class="row cards table-jqwidget explorer-enabled">
-                    <div class="col-12">
-                        <div class="row card-layout">
+                <div class="row cards table-jqwidget" >
+                    <div class="col-12 explorer-enabled" id="{modal-fullscreen}">
+                        <div class="row card-layout modal-base" >
                             <!--Card -header-->
                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
                                 <div><span class="h2">Pivot Table</span></div>
                                 <div>
                                    <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                  
                                 </div>
                             </div>
                             <!--Card header-->
@@ -295,11 +301,9 @@
                                     </div>
                                     <div>
                                         <select class="form-control dropdown">
-                                            <option>12</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option>&nbsp;5&nbsp;</option>
+                                            <option>10</option>
+                                            <option>15</option>
                                         </select>
                                     </div>
                                 </div>
@@ -319,10 +323,10 @@
                     <div class="container-fluid p-0">
                         <div class="row">
                             <!--Char column 1-->
-                            <div class="col-sm-12 col-md-6 col-lg-6 explorer-enabled">
-                                <div class="col-12 card-layout p-0">
-                                    <div class="row">
-                                        <div class="col-12">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-12 card-layout p-0 explorer-enabled" id="{modal-fullscreen}">
+                                    <div class="row modal-base">
+                                        <div class="col-12 modal-master">
                                             <!--Card -header-->
                                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
                                                 <div><span class="h2">Time Scale</span></div>
@@ -344,10 +348,10 @@
                             </div>
                             <!-- Chart Column 1 End-->
                             <!-- Chart Column 2 -->
-                            <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6 explorer-enabled">
-                                <div class="col-12 card-layout p-0">
-                                    <div class="row">
-                                        <div class="col-12">
+                            <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6">
+                                <div class="col-12 card-layout p-0 explorer-enabled" id="{modal-fullscreen}">
+                                    <div class="row modal-base">
+                                        <div class="col-12 modal-master">
                                             <!--Card -header-->
                                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
                                                 <div><span class="h2">Line Chart</span></div>
@@ -377,10 +381,10 @@
                     <div class="container-fluid p-0">
                         <div class="row">
                             <!--Char column 3-->
-                            <div class="col-sm-12 col-md-6 col-lg-6 explorer-enabled">
-                                <div class="col-12 card-layout p-0">
-                                    <div class="row">
-                                        <div class="col-12">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-12 card-layout p-0 explorer-enabled " id="{modal-fullscreen}">
+                                    <div class="row modal-base">
+                                        <div class="col-12 modal-master">
                                             <!--Card -header-->
                                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
                                                 <div><span class="h2">Bar Chart</span></div>
@@ -402,10 +406,10 @@
                             </div>
                             <!-- Chart Column 1 End-->
                             <!-- Chart Column 4 -->
-                            <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6 explorer-enabled">
-                                <div class="col-12 card-layout p-0">
-                                    <div class="row">
-                                        <div class="col-12">
+                            <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6">
+                                <div class="col-12 card-layout p-0 explorer-enabled" id="{modal-fullscreen}">
+                                    <div class="row modal-base">
+                                        <div class="col-12 modal-master">
                                             <!--Card -header-->
                                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
                                                 <div><span class="h2">Pivot Table</span></div>
@@ -415,9 +419,9 @@
                                             </div>
                                             <!--Card header-->
                                             <!--Card Body-->
-                                            <div class="col-12 card-body-charts">
+                                            <div class="col-12 card-body-charts h-100 justify-content-center">
                                                 <div class="charts">
-                                                    <div id="map-chart" class="d-flex justify-content-center" style="height: inherit; width: 100%;" ></div>
+                                                    <div id="map-chart" style="width:100px;height:100px;" ></div>
                                                 </div>
                                             </div>
                                             <!--Card Body-->
@@ -447,15 +451,15 @@
     <script src="plugins/bootstrap/bootstrap.min.js"></script>
     <script src="plugins/select2/select.min.js"></script>
     <script src="plugins/jquery/moment.min.js"></script>
-	<script src="plugins/chartjs/chart.min.js"></script>
-	<script src="assets/js/utils.js"></script>
+    <script src="plugins/chartjs/chart.min.js"></script>
+    <script src="plugins/googlechart/googlechart.min.js"></script>
     <!-- Charts Import from Assets/js-->
         <script src="assets/js/piechart.js"></script>
         <script src="assets/js/linechart.js"></script>
         <script src="assets/js/barchart.js"></script>
         <script src="assets/js/mountainchart.js"></script>
+        <script type="text/javascript" src="assets/js/googlemap.js"></script>
     <!-- Charts Import-->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="plugins/jquery/moment.min.js"></script>
         <script type="text/javascript" src="plugins/daterangepicker/date_range_picker.min.js"></script>
     <!-- jq widgets-->
@@ -468,7 +472,6 @@
         <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxpivot.js"></script> 
         <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxpivotgrid.js"></script>
         <script type="text/Javascript" src="assets/js/jqwidgets.js"></script>
-        <script type="text/javascript" src="assets/js/googlemap.js"></script>
     <!-- jq widgets-->
     <script>
         ///Common Header and sidebar loaded dynamically
@@ -476,6 +479,7 @@
             $(".custom-select").select2();
             $('#header').load('common/Navbar.html');
             $('.date-picker').daterangepicker();
+            $('#defaultMonthButton').focus();
         });
 
         $(".mobile-view-toggler-on").click(function(event){
@@ -487,18 +491,12 @@
             $(".mobile-view-toggler-on").show();
         });
         $(".explore_fullview").click(function(event){
+            ///full screen logic
             var index = $('.explore_fullview').index(this);
-            console.log($('.explorer_enabled'))
-            $('.card-layout').eq(index+1).css({    
-                 position: 'fixed',
-                 top: 0,
-                 bottom: 0,
-                 height:'40px',
-                 padding:'0px',
-                 left: 0,
-                 zIndex: 1500,
-                 backgroundColor:'orange'
-                }); 
+            var ele=document.getElementsByClassName('explorer-enabled')[index];
+            if(ele.id=="modal-fullscreen"){
+                ele.id='';
+            }else{ele.id="modal-fullscreen";}
         });
     </script>
 
