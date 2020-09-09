@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>RSD</title>
+    <link rel="icon" href="assets/images/titleicon.png" type="image/icon-type">
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/select2/selec2.min.css">
+    <link rel="stylesheet" href="plugins/daterangepicker/date_range_picker.min.css">
+
+    <link rel="stylesheet" href="plugins/jqwidgets/jqwidgets/styles/jqx.base.css" />
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <div>
+        <!-- Main Header -->
+        <div id="header"></div>
+        <!-- Main Header END-->
+        <!-- Sidebar -->
+        <div id="sidebar">
+        <!-- Sidebar OutSide Wrapper -->
+                <div class="sidebar-box">
+                        <!-- Sidebar Inner Wrapper -->
+                        <div class="row sidebar-wrapper">
+                            <!-- Sidebar contents -->
+                            <div class="col-12 sidebar-content">
+                                <div class="row">
+                                    <!-- Sidebar Header Box -->
+                                    <div class="col-12 ">
+                                        <ul class="list-header d-flex justify-content-between align-items-center p-2 list-unstyled">
+                                            <li class="d-lg-none"><btn class="mobile-view-toggler-off"><span class="fa fa-arrow-left"></span></btn></li>
+                                            <li class="h2 my-auto">
+                                                Filters
+                                            </li>
+                                            <li><span class=" resetText">RESET</span></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Filter Form-->
+                                    <form class="container-fluid">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <!-- Filter 1 --CHannel -->
+                                                <div class="filters col-12">
+                                                    <label class="h2">Channel Type</label>
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select" id="select">
+                                                                    <option selected>Channel</option>
+                                                                    <option value="1">Channel1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select" id="select1">
+                                                                    <option selected>Sub Channel</option>
+                                                                    <option value="1">Sub Channel1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Filter 2 Region -->
+                                                <div class="filters col-12">
+                                                    <label class="h2">Region</label>
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>Region</option>
+                                                                    <option value="1">East India</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>State</option>
+                                                                    <option value="1">Tamilnadu</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>City</option>
+                                                                    <option value="1">Chennai</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Filter 3 Polices-->
+                                                <div class="filters col-12">
+                                                    <label class="h2">Policy Parameters</label>
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>Policy Type</option>
+                                                                    <option value="1">Policy1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>Add On</option>
+                                                                    <option value="1">Plugin 1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>Sum Insured</option>
+                                                                    <option value="1">$45000</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Filters 4 Insurance-->
+                                                <div class="filters col-12">
+                                                    <label class="h2">Insurance Parameters</label>
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>Age Band</option>
+                                                                    <option value="1">56</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12">
+                                                            <div class="master-control">
+                                                                <select class="btn form-control dropdown custom-select">
+                                                                    <option selected>Pre Existing Disease</option>
+                                                                    <option value="1">None</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!--Filter Form End-->
+                                </div>
+                            </div>
+                            <!-- Sidebar Contents End-->
+                        </div>
+                        <!--Sidebar Inner Wrapper End-->
+                </div>
+        <!--Sidebar Outside Wrapper End-->
+        </div>
+        <!-- SideBar End-->
+        <div class="body container-fluid pl-2 pr-2">
+            <!-- Inner Container-->
+            <div class="container-fluid view">
+                <!-- Layer 1-->
+                <div class="row first-layer">
+                        <div class="col-12 col-sm-7 d-flex col-md-8 col-lg-8 col-xl-8 p-2" style="min-height: 120px;">
+                            <div class="col-12 titlecard d-flex flex-nowrap">
+                                <div class="d-flex justify-content-around align-items-center">
+                                    <div class="titlecard-welcome d-flex flex-column">
+                                        <div class="title">Welcome Back</div>
+                                        <div class="title-name">Jonarthan Raphael</div>
+                                    </div>
+                                </div>           
+                                <div >
+                                    <div class="position-absolute" style="max-width:160px; height: 100%; right: 6%">
+                                        <img src="/assets/images/Illustration.png" width="100%" height='100%' alt="illustration">
+                                    </div>
+                                </div>
+                            </div>                     
+                        </div>
+                        <div class="col-12 col-sm-5 col-md-4 col-lg-4 col-xl-4 p-2">
+                            <div class="col-12 card h-100">
+                                    <div class="row h-100 d-flex pl-4 justify-content-between">
+                                    <div class="leadsData">
+                                        <span class="h2"><b>Total Leads</b></span>
+                                        <span><h4 class="leadsCount">250</b></h4></span>
+                                    </div>
+                                    <div class="piechart pr-4" >
+                                        <canvas id="LeadsChart"></canvas>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- Layer 1 End-->
+                <!-- Report card-->
+                <div class="row cards Reports">
+                    <div class="col-12">
+                        <div class="row card-layout">
+                            <!--Card -header-->
+                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                <div><span class="h2">Reporting</span></div>
+                                <div>
+                                    <button class="resetText btn">RESET</button>
+                                </div>
+                            </div>
+                            <!--Card header-->
+                            <!--Card Body-->
+                            <div class="col-12 card-body">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12 col-xl-5 p-0 pt-md-2 ">
+                                        <div class="col-12">
+                                        <div class="h2">Report Period</div>                                        
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn mr-2 mr-lg-0">Current Month</button>
+                                            <button class="btn mr-2 mr-lg-0">Last Month</button>
+                                            <button class="btn mr-2 mr-lg-0">Current Year</button>
+                                            <button class="btn mr-2">Last Year</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-12 col-xl-7 pt-0 pt-md-2">
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-4 pt-4 pt-md-0">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="h2">
+                                                            Period 1
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" class="date-picker form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 pt-4 pt-md-0">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="h2">
+                                                            Period 2
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" class="date-picker form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 pt-4 pt-md-0">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="h2">
+                                                            Period 3
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" class="date-picker form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Card Body-->
+                        </div>
+                    </div>
+                </div>
+                <!-- Report Card End-->
+                <!-- Table Layout Card-->
+                <div class="row cards table-jqwidget explorer-enabled">
+                    <div class="col-12">
+                        <div class="row card-layout">
+                            <!--Card -header-->
+                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                <div><span class="h2">Pivot Table</span></div>
+                                <div>
+                                   <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                </div>
+                            </div>
+                            <!--Card header-->
+                            <!--Card Body-->
+                            <div class="col-12 card-body d-flex justify-content-center" id="pivot">
+                                <div class="table-wrapper p-2">
+                                    <div id="divPivotGrid" ></div>
+                                </div>
+                            </div>
+                            <!--Card Body-->
+                            <!--Card Footer-->
+                            <div class="col-12 card-layout-footer  d-flex justify-content-between align-items-center">
+                                <div class="d-inline-flex align-items-center">
+                                    <div>
+                                        <span>Show</span>
+                                    </div>
+                                    <div>
+                                        <select class="form-control dropdown">
+                                            <option>12</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-inline-flex align-items-center">
+                                   <div><btn class="btn"><span class="fa fa-angle-left"></span></btn></div>
+                                   <div>1 of 10</div>
+                                   <div><btn class="btn"><span class="fa fa-angle-right"></span></btn></div>
+                                </div>
+                            </div>
+                            <!--Card Footer-->
+                        </div>
+                    </div>
+                </div>
+                <!-- Table Layout Card End-->
+                <!-- Chart Group 1-->
+                <div class="row cards">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <!--Char column 1-->
+                            <div class="col-sm-12 col-md-6 col-lg-6 explorer-enabled">
+                                <div class="col-12 card-layout p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!--Card -header-->
+                                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                                <div><span class="h2">Time Scale</span></div>
+                                                <div>
+                                                    <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                                </div>
+                                            </div>
+                                            <!--Card header-->
+                                            <!--Card Body-->
+                                            <div class="col-12 card-body-charts">
+                                                <div class="charts">
+                                                    <canvas id="chart1" ></canvas>
+                                                </div>
+                                            </div>
+                                            <!--Card Body-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chart Column 1 End-->
+                            <!-- Chart Column 2 -->
+                            <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6 explorer-enabled">
+                                <div class="col-12 card-layout p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!--Card -header-->
+                                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                                <div><span class="h2">Line Chart</span></div>
+                                                <div>
+                                                    <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                                </div>
+                                            </div>
+                                            <!--Card header-->
+                                            <!--Card Body-->
+                                            <div class="col-12 card-body-charts">
+                                                <div class="charts">
+                                                    <canvas id="lineChart" ></canvas>
+                                                </div>
+                                            </div>
+                                            <!--Card Body-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Chart Column 2 -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Chart Group 1 End-->
+                <!-- Chart Group 2-->
+                <div class="row cards">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <!--Char column 3-->
+                            <div class="col-sm-12 col-md-6 col-lg-6 explorer-enabled">
+                                <div class="col-12 card-layout p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!--Card -header-->
+                                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                                <div><span class="h2">Bar Chart</span></div>
+                                                <div>
+                                                    <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                                </div>
+                                            </div>
+                                            <!--Card header-->
+                                            <!--Card Body-->
+                                            <div class="col-12 card-body-charts">
+                                                <div class="charts">
+                                                    <canvas id="barChart" ></canvas>
+                                                </div>
+                                            </div>
+                                            <!--Card Body-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chart Column 1 End-->
+                            <!-- Chart Column 4 -->
+                            <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6 explorer-enabled">
+                                <div class="col-12 card-layout p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!--Card -header-->
+                                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                                <div><span class="h2">Pivot Table</span></div>
+                                                <div>
+                                                    <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                                </div>
+                                            </div>
+                                            <!--Card header-->
+                                            <!--Card Body-->
+                                            <div class="col-12 card-body-charts">
+                                                <div class="charts">
+                                                    <div id="map-chart" class="d-flex justify-content-center" style="height: inherit; width: 100%;" ></div>
+                                                </div>
+                                            </div>
+                                            <!--Card Body-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Chart Column 4 End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Chart Group 2 End-->
+            </div>
+            <!-- Inner Container End-->
+        </div>
+        <!-- App Body End-->
+            <!--Mobile View Sidebar Toggler-->
+             <div class="btn position-fixed mobile-view-toggler-on">
+                 <div class="icon-o position-absolute"></div>
+                <div class="toggler-btn h-100 d-flex justify-content-center align-items-center">
+                    <span class="fa fa-filter"></span>
+                </div >    
+             </div>
+            <!--Mobile View Sidebar Toggler-->
+    </div>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/select2/select.min.js"></script>
+    <script src="/plugins/jquery/moment.min.js"></script>
+	<script src="/plugins/chartjs/chart.min.js"></script>
+	<script src="/assets/js/utils.js"></script>
+    <!-- Charts Import from Assets/js-->
+        <script src="/assets/js/piechart.js"></script>
+        <script src="/assets/js/linechart.js"></script>
+        <script src="/assets/js/barchart.js"></script>
+        <script src="/assets/js/mountainchart.js"></script>
+    <!-- Charts Import-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="/plugins/jquery/moment.min.js"></script>
+        <script type="text/javascript" src="/plugins/daterangepicker/date_range_picker.min.js"></script>
+    <!-- jq widgets-->
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxcore.js"></script>
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxdata.js"></script> 
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxmenu.js"></script>
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxtextarea.js"></script>
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxpivot.js"></script> 
+        <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxpivotgrid.js"></script>
+        <script type="text/Javascript" src="assets/js/jqwidgets.js"></script>
+        <script type="text/javascript" src="assets/js/googlemap.js"></script>
+    <!-- jq widgets-->
+    <script>
+        ///Common Header and sidebar loaded dynamically
+        $(document).ready(function () {
+            $(".custom-select").select2();
+            $('#header').load('common/Navbar.html');
+            $('.date-picker').daterangepicker();
+        });
+
+        $(".mobile-view-toggler-on").click(function(event){
+            $('#sidebar').animate({'opacity': 'show', 'paddingTop': 0});
+            $(".mobile-view-toggler-on").hide();
+        });
+        $(".mobile-view-toggler-off").click(function(event){
+            $('#sidebar').fadeOut();
+            $(".mobile-view-toggler-on").show();
+        });
+        $(".explore_fullview").click(function(event){
+            var index = $('.explore_fullview').index(this);
+            console.log($('.explorer_enabled'))
+            $('.card-layout').eq(index+1).css({    
+                 position: 'fixed',
+                 top: 0,
+                 bottom: 0,
+                 height:'40px',
+                 padding:'0px',
+                 left: 0,
+                 zIndex: 1500,
+                 backgroundColor:'orange'
+                }); 
+        });
+    </script>
+
+</body>
+
+</html>

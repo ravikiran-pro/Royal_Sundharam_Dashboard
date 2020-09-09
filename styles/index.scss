@@ -1,0 +1,441 @@
+$hightlightColor:#004990;
+$primaryColor:#fff;
+$secondaryColor:#F4F5F8;
+$breakpoint-sm:768px;
+$breakpoint-md:991px;
+$ArrowWhite:'../assets/images/dropdown-icon-white.svg';
+$ArrowBlack:'../assets/images/dropdown-icon-black.svg';
+$DrawerWidth:250px;
+
+html,body{
+    background-color: $secondaryColor;
+}
+@font-face {
+    font-family: "robotoLight";
+    src: url("../assets/fonts/Roboto-Light.ttf");
+  }
+@font-face{
+    font-family: "robotoRegular";
+    src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+@font-face{
+    font-family: "robotoBold";
+    src: url('../assets/fonts/Roboto-Bold.ttf');
+}
+@font-face{
+    font-family: "robotoMedium";
+    src: url('../assets/fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: "robotoBlack";
+    src: url("../assets/fonts/Roboto-Black.ttf");
+  }
+
+
+.h2{
+      font-family: "robotoBold";
+    font-size: 14px;
+}
+@mixin dropdownIconSelector($IconType,$color){
+    background:none;
+    background: url($IconType) no-repeat 95% 50%;
+    border-color: $color;
+    cursor: pointer;
+    &:focus{
+        border-color: $color;
+    }
+    option{
+        color:black;
+        font-weight: inherit;
+    }
+}
+
+.resetText{
+    font-family: "regularMedium";
+    font-size: 11px;
+    font-weight: 800;
+    color: $hightlightColor;
+    cursor: pointer;
+}
+.btn:focus,select:focus,.form-control:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+
+///Header-grouping
+.fixed-top{
+    background-color: $primaryColor;
+    .nav-header{
+        padding: 8px 16px;
+        #logo{
+           width: 140px;
+        }
+        .navbar-icons{
+            padding:8px;
+            align-self: center;
+            a{
+                .fa{ 
+                    color: $primaryColor;
+                   -webkit-text-stroke-width: 1.4px;
+                   -webkit-text-stroke-color: $hightlightColor;
+                    cursor: pointer;
+                 }
+            }
+            .notificationCounter{
+                background-color: #FF0000; 
+                color: white; 
+                margin-top: -14px; 
+                margin-left: -10px; 
+                border-radius: 50%; 
+                width: 16px; 
+                height: 16px; 
+                font-size: 0.6rem;
+            }
+             #userPic{
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+            }
+        }
+    }
+    .navbar-operations{
+        padding: 10px 16px;
+        background-color: $hightlightColor;
+        .dropdown{
+          font-weight: 600;
+          font-size:12px;
+          background-color: transparent;
+          color: white;
+          text-align: left;
+          width: 200px;
+          @include dropdownIconSelector($ArrowWhite,$primaryColor);
+        }
+        div:nth-child(2){
+            button{
+                font-family: regularLight;
+                font-size: 0.8em;
+                border-radius: 18px;
+                background-color: #3D75AB;
+                color: $primaryColor;
+                @media (min-width:769px){
+                     padding-left: 20px;
+                     padding-right: 20px;
+                  i{padding-left: 8px;}
+                }
+                @media (max-width:$breakpoint-sm){
+                    border-radius: 50%;
+                    text-align: center;
+                     width: 40px;
+                     height: 40px;
+                  span{display: none;} 
+                }
+            }
+        }
+    }
+}
+
+///sidebar 
+#sidebar{
+        top: 153px;
+        z-index: 1200;
+        position: fixed;
+        width: $DrawerWidth;
+        height: 100vh;
+        padding-top: 5px;
+    .sidebar-box{
+        height: calc(100% - 140px);
+        overflow-x: hidden;
+        padding: 0;
+        overflow-y: auto;
+        background-color: $primaryColor;
+        border-top-right-radius: 40px;
+        .sidebar-wrapper{
+            .sidebar-content{
+                padding:14px 18px;
+                .list-header{
+                   
+                    border-bottom: solid 2px $secondaryColor;
+                }
+                form{
+                    .filters{
+                        margin-bottom: 20px;
+                        .master-control{
+                            padding: 6px 4px;
+                                .select2-container{
+                                    font-size: 14px;
+                                    font-family: "regularBlack";
+                                    width: 100% !important;
+                                    .select2-selection--single {
+                                        height: 40px;
+                                        padding: 8px 2px;
+                                        opacity: 0.8;
+                                        border: solid 2px #EAEAEA;
+                                        &:focus{
+                                            outline: none;
+                                            border: solid 0.5px $hightlightColor;
+                                        }
+                                      }
+                                    &--default{
+                                    .select2-selection__arrow {
+                                        background-image: url('/assets/images/dropdown-icon-black.svg');
+                                        background-repeat: no-repeat;
+                                        background-position-y: 15px;
+                                        right: 4px;
+                                        background-size: 11px;
+                                        b { display: none;}
+                                      }
+                                }
+                            }
+                            .dropdown{
+                                @include dropdownIconSelector($ArrowBlack,$secondaryColor);
+                                font-size: 14px;
+                                border-width: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+///Body of the app
+.body{
+    padding-top: 153px;
+    ///drawerwidth 250 
+    margin-left: $DrawerWidth;
+    width: calc(100% - 250px);
+    background-color: $secondaryColor;
+    @media (max-width:$breakpoint-md){
+        margin-left: 0px;
+        width: 100%;
+    }
+    .view{
+        margin-bottom: 20px;
+       .first-layer{
+             .titlecard{
+                background-color: #D69100;
+                background-image: transparent linear-gradient(180deg, #EDAD27 0%, #D69100 100%) 0% 0% no-repeat padding-box;
+                background-image: url('/assets/images/Curves.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y: 100%;
+                border-radius: 10px;
+                color: white; 
+            }
+
+            .titlecard-welcome{
+                .title{
+                    font-size: 14px;
+                    font-family: robotoLight;
+                }
+                .title-name{
+                    font-family: robotoBold;
+                    font-size: 20px;
+                }
+            }
+            .card{
+                padding: 15px 15px;
+                border-radius: 10px;
+                .leadsData{
+                    .leadsCount{
+                        font-family: "regularBlack";
+                        font-weight: 600;
+                       color: $hightlightColor;
+                    }
+                }
+                .piechart{
+                    width: 7em;
+                    margin: auto 0px;
+                    height: 100px;
+                }
+            }
+        }
+        .cards{
+            padding: 8px;
+            .card-layout{
+                border-radius: 10px;
+                background-color: white;
+                .card-layout-header{
+                   padding: 14px;
+                   color: black;
+                   border-bottom: solid 1px #EAEAEA;
+                   button{
+                       border-color: $hightlightColor;
+                       padding: 4px 10px;
+                       background-color: white;
+                       &:hover{
+                            background-color: $hightlightColor;
+                            color: white;
+                       }
+                   }
+                }
+                .card-body{
+                    .btn{
+                        font-size: 0.7em;
+                        background-color: white;
+                        border:solid 2px #EAEAEA;
+                        color: black;
+                        border-radius: 8px;
+                        &:hover{
+                            background-color: $hightlightColor;
+                            color: white;
+                        }
+                    }
+                    .date-picker{
+                        width: 100%;
+                        height: 34px;
+                        font-size: 0.7em;
+                        color: black;
+                        background-image: url('/assets/images/datepicker.svg');
+                        background-repeat: no-repeat;
+                        background-position: 96% 50%;
+                        background-size: 14px;
+                    }
+                    &-charts{
+                        padding: 20px;
+                        height: 100%;
+                        width: 100%;
+                    .charts{
+                        height: 160px;
+                        width: 100%;
+                    }
+                    }
+                }
+                .card-layout-footer{
+                    border-top: solid 1px #EAEAEA;
+                    font-size: 12px;
+                    padding: 10px;
+                    div{
+                        padding: 4px;
+                        .dropdown{
+                           font-size: 12px;
+                           &:focus{
+                               outline:none;
+                               border: solid 1px #EAEAEA;
+                           }
+                        }
+                        .btn{
+                            padding: 1px 8px;
+                            border: solid 1px #EAEAEA;
+                        }
+                    }
+                }
+            }
+        }
+        .explorer-enabled{
+            .explore-icon{
+                font-size: 14px;
+                color:rgba($color: #000000, $alpha: 0.4);
+                cursor: pointer;
+                &:hover{
+                    transform: scaleX(1.15);
+                }
+            }
+        }
+    }
+}
+
+.mobile-view-toggler{
+    &-on{
+        z-index: 1500;
+        background-color: $hightlightColor;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: none;
+        .icon-o{
+            width: 12px;
+            height: 12px;
+            top: 0;
+            right: 0;
+            background-color: #FF0000;
+            border-radius: 50%;
+        }
+        span{
+            vertical-align: center;
+            font-size: 22px;
+            color: $primaryColor;
+        }
+    }
+    &-off{
+       font-size: 18px;
+    }
+}
+////Table overrides  Check 'plugins/jqwidgets/jqwidgets/styles/jqx.base.css
+.table-wrapper{
+    max-width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    #divPivotGrid{
+        width: 100%;
+        #innerDiv jqx-pivotgrid-expand-button{
+            padding:10px !important;
+            left: 40px;
+        }
+        .jqx-pivotgrid-content-wrapper {
+            border: solid 1px #EAEAEA;
+            font-size: 1em;   
+            font-family: "robotoRegular";
+        }
+        .jqx-pivotgrid{
+            &::before{
+                position: absolute;
+                top: 20px;
+                left: 14px;
+                font-size: 14px;
+                font-family: "robotoBold";
+                content: 'Measures';
+                color: black;
+            }    
+            border: solid 1px #EAEAEA;
+            background-color: white;
+        }
+        .jqx-widget-header{
+            font-family: "robotoMedium";
+            font-size: 12px;
+            background-color: white;
+            color: black;
+        }
+        .jqx-pivotgrid-{
+                &expand-button{background-image: url('/assets/images/plus-icon.svg') !important;}
+                &collapse-button{background-image: url('/assets/images/minus-icon.svg') !important;}
+                &collapse-button,&expand-button{
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    margin: 0 8px 0 10px;
+                    left: 0px;
+                }
+        }
+    }    
+}
+
+///To view select2 container on tab devices
+.select2-container{
+    z-index: 1400;
+}
+
+@media screen and (max-width:$breakpoint-md) and (min-width:0px){
+    #sidebar{
+        top: 0;
+        width: 100vw;
+        z-index: 1200;
+        display: none;       
+        .sidebar-box{
+            border-top-right-radius: 0px;
+            height: 100vh;
+        }
+    }
+    .mobile-view-toggler-on{
+        display: block;
+    }
+}
+#map-chart.google-visualization-tooltip {
+    width: auto;
+    height:auto;
+    background-color: #ccccff;
+    color: #000000;
+    text-align: center;
+    vertical-align: middle;
+}
