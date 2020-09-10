@@ -79,3 +79,57 @@ function SetupJqWidgets(){
 // prepare sample data
             
 SetupJqWidgets();
+
+
+////bootstrap base table
+function generateData(){
+    var data = new Array();
+    // create a data source and data adapter
+    ///Sample Mock Data
+    var Header =
+    [
+        "Opening OS Claim","Live Cost","Claim Part","XDL Cost","Live Count","Claims Paid","Operating Cost",
+        "Claim Part","XDL Cost","Live Count","Claims Paid","Operating Cost","Claim Part","XDL Cost","Live Count","Claims Paid","Operating Cost",
+    ];
+    var productNames =
+    [
+        "DateRange1","DateRange2","DateRange3"
+    ];
+    var priceValues =
+    [
+        "2000025", "100005", "300000", "300003", "400005", "300006", "300008", "200005", "500000", "1000075", "3000025", "400000"
+    ];
+    for (var i = 0; i < Header.length-1; i++) {
+        var row = {};
+        row["HeaderCost"] = Header[i];
+        row["Actual1"] = priceValues[Math.floor(Math.random() * priceValues.length)];
+        row["Budget1"] = priceValues[Math.floor(Math.random() * priceValues.length)];
+        row["Actual2"] = priceValues[Math.floor(Math.random() * priceValues.length)];
+        row["Budget2"] = priceValues[Math.floor(Math.random() * priceValues.length)];
+        row["Actual3"] = priceValues[Math.floor(Math.random() * priceValues.length)];
+        row["Budget3"] = priceValues[Math.floor(Math.random() * priceValues.length)];
+        var condition = productNames[Math.floor(Math.random() * productNames.length)];
+        var Actual="Actual"+parseInt(condition[condition.length-1])
+        var Budget="Budget"+parseInt(condition[condition.length-1])
+        row[Actual]=priceValues[Math.floor(Math.random() * priceValues.length)]
+        row[Budget]=priceValues[Math.floor(Math.random() * priceValues.length)]
+        data[i] = row;
+    }
+    return data
+}
+
+$('#bootstrapDataTable').DataTable( {
+      data:generateData(),
+        columns: [
+            { data: 'HeaderCost' },
+            { data: 'Actual1' },
+            { data: 'Budget1' },
+            { data: 'Actual2' },
+            { data: 'Budget2' },
+            { data: 'Actual3' },
+            { data: 'Budget3' },
+        ],
+        "pageLength": 5,
+        "dom": '<"top"i>rt<"bottom"flp><"clear">'
+
+} );

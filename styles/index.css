@@ -22,11 +22,6 @@ html, body {
   src: url("../assets/fonts/Roboto-Medium.ttf");
 }
 
-@font-face {
-  font-family: "robotoBlack";
-  src: url("../assets/fonts/Roboto-Black.ttf");
-}
-
 .h2 {
   font-family: "robotoBold";
   font-size: 14px;
@@ -257,9 +252,9 @@ html, body {
 }
 
 .page-base-container .view .first-layer .titlecard .ilustrated-img {
-  max-width: 160px;
+  max-width: 200px;
   height: 100%;
-  right: 6%;
+  right: 3%;
 }
 
 .page-base-container .view .first-layer .titlecard .ilustrated-img img {
@@ -273,8 +268,6 @@ html, body {
 }
 
 .page-base-container .view .first-layer .card .leadsData .leadsCount {
-  font-family: "regularBlack";
-  font-weight: 600;
   color: #004990;
 }
 
@@ -371,13 +364,13 @@ html, body {
   border: solid 1px #004990;
 }
 
-.page-base-container .view .explorer-enabled .explore-icon {
+.page-base-container .view .explorer-enabled .explore-icon-on, .page-base-container .view .explorer-enabled .explore-icon-off {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
-.page-base-container .view .explorer-enabled .explore-icon:hover {
+.page-base-container .view .explorer-enabled .explore-icon-on:hover, .page-base-container .view .explorer-enabled .explore-icon-off:hover {
   -webkit-transform: scaleX(1.15);
           transform: scaleX(1.15);
 }
@@ -584,11 +577,51 @@ html, body {
 }
 
 #modal-fullscreen .modal-base .modal-master .card-body-charts {
-  background-color: wheat;
   height: 80%;
 }
 
 #modal-fullscreen .modal-base .modal-master .card-body-charts .charts {
   height: 100%;
+}
+
+tbody {
+  border: solid 1px #EAEAEA;
+  font-family: robotoRegular;
+}
+
+tr td {
+  border: solid 1px #EAEAEA !important;
+  font-size: 1em;
+}
+
+thead th, .sorting_1 {
+  border: solid 1px #EAEAEA !important;
+  font-size: 12px;
+}
+
+tr td:nth-child(1) {
+  min-width: 150px;
+}
+
+@media (min-width: 762px) {
+  tr td:nth-child(1) {
+    min-width: 100px;
+  }
+}
+
+tr td:nth-child(1)::before {
+  content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+}
+
+tr td {
+  font-size: 0.8em;
+}
+
+#bootstrapDataTable_filter {
+  display: none;
+}
+
+.dataTables_info {
+  display: none !important;
 }
 /*# sourceMappingURL=index.css.map */

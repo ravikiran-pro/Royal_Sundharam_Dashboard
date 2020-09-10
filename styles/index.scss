@@ -2,6 +2,7 @@ $hightlightColor:#004990;
 $primaryColor:#fff;
 $secondaryColor:#F4F5F8;
 $borderColor:#EAEAEA;
+
 $breakpoint-sm:768px;
 $breakpoint-md:991px;
 
@@ -31,11 +32,7 @@ html,body{
     font-family: "robotoMedium";
     src: url('../assets/fonts/Roboto-Medium.ttf');
 }
-///unused   --remove later
-@font-face {
-    font-family: "robotoBlack";
-    src: url("../assets/fonts/Roboto-Black.ttf");
-  }
+
 
 ///common header fonts
 .h2{
@@ -227,9 +224,9 @@ html,body{
                     }
                 }
                 .ilustrated-img{
-                    max-width:160px; 
+                    max-width:200px; 
                     height: 100%; 
-                    right: 6%;
+                    right: 3%;
                     img{
                         width: 100%;
                         height: 100%;
@@ -241,8 +238,6 @@ html,body{
                 border-radius: 10px;
                 .leadsData{
                     .leadsCount{
-                        font-family: "regularBlack";
-                        font-weight: 600;
                        color: $hightlightColor;
                     }
                 }
@@ -325,7 +320,7 @@ html,body{
             }
         }
         .explorer-enabled{
-            .explore-icon{
+            .explore-icon-on,.explore-icon-off{
                 font-size: 14px;
                 color:rgba($color: #000000, $alpha: 0.4);
                 cursor: pointer;
@@ -482,7 +477,7 @@ html,body{
       }
 }
 }
-
+////Enable for full full screen view
 #modal-fullscreen{
     position: fixed;
     top: 0;
@@ -510,7 +505,6 @@ html,body{
            background-color: white;
            border-radius: 20px;
            .card-body-charts{
-            background-color: wheat;
             height: 80%;
               .charts{
                   height: 100%;
@@ -519,3 +513,40 @@ html,body{
        }
     }
 }
+
+////bootstrap data table
+tbody{
+    border: solid 1px $borderColor;
+    font-family: robotoRegular;
+ }
+ tr{
+     td{
+         border:solid 1px $borderColor !important;
+         font-size: 1em;
+         
+     }
+ }
+ 
+ thead th,.sorting_1{
+     border:solid 1px $borderColor !important;
+     font-size: 12px;
+ }
+ 
+ tr td:nth-child(1){
+    min-width: 150px;
+    @media (min-width:762px){
+        min-width: 100px;
+    }
+    &::before{
+        content:'\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+    }
+ }
+ tr td{
+     font-size: 0.8em;
+ }
+ #bootstrapDataTable_filter{
+     display: none;
+ }
+ .dataTables_info{
+     display: none !important;
+ }

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="plugins/select2/selec2.min.css">
     <link rel="stylesheet" href="plugins/daterangepicker/date_range_picker.min.css">
-
     <link rel="stylesheet" href="plugins/jqwidgets/jqwidgets/styles/jqx.base.css" />
+    <link rel="stylesheet" href="plugins/datatable/datatables.min.css">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 
@@ -178,7 +178,7 @@
                                     </div>
                                 </div>           
                                 <div >
-                                    <div class="position-absolute ilustrated-img" style="max-width:180px; height: 100%; right: 3%">
+                                    <div class="position-absolute ilustrated-img">
                                         <img src="assets/images/Illustration.png" width="100%" height='100%' alt="illustration">
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                                     <div class="row h-100 d-flex pl-4 justify-content-between">
                                     <div class="leadsData">
                                         <span class="h2"><b>Total Leads</b></span>
-                                        <span><h4 class="leadsCount">250</b></h4></span>
+                                        <span><h4><b class="leadsCount">250</b></h4></span>
                                     </div>
                                     <div class="piechart pr-4" >
                                         <canvas id="LeadsChart"></canvas>
@@ -208,12 +208,12 @@
                                 <div><span class="h2">Reporting</span></div>
                                 <div>
                                     <button class="resetText btn">RESET</button>
-                                    <btn class="btn report-toggler"><span class="fa fa-angle-down"></span></btn>
+                                    <btn class="btn report-toggler p-0"><span class="fa fa-angle-down"></span></btn>
                                 </div>
                             </div>
                             <!--Card header-->
                             <!--Card Body-->
-                            <div class="col-12 card-body">
+                            <div class="col-12 card-body report-card">
                                 <div class="row">
                                     <div class="col-12 col-lg-12 col-xl-5 p-0 pt-md-2 ">
                                         <div class="col-12">
@@ -275,7 +275,7 @@
                 <!-- Report Card End-->
                 <!-- Table Layout Card-->
                 <div class="row cards table-jqwidget" >
-                    <div class="col-12 explorer-enabled" id="{modal-fullscreen}">
+                    <div class="col-12 explorer-enabled" >
                         <div class="row card-layout modal-base" >
                             <!--Card -header-->
                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
@@ -317,14 +317,82 @@
                         </div>
                     </div>
                 </div>
+                <!-- Table Layout Card Jqwidget End-->
+                <!-- Table Layout Card Normal-->
+                <div class="row cards" >
+                    <div class="col-12 explorer-enabled" >
+                        <div class="row card-layout modal-base" >
+                            <!--Card -header-->
+                            <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
+                                <div><span class="h2">Pivot Table</span></div>
+                                <div>
+                                   <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
+                                  
+                                </div>
+                            </div>
+                            <!--Card header-->
+                            <!--Card Body-->
+                            <div class="col-12 card-body d-flex justify-content-center">
+                                <div class="table-wrapper p-2 w-100">
+                                    <table id="bootstrapDataTable" class="table" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                             <th style="padding: 10px;">
+                                                Measures
+                                            </th>
+                                             <th colspan="2">Date Range 1</td>
+                                             <th colspan="2">Date Range 2</td>
+                                             <th colspan="2">Date Range 3</td>
+                                           </tr>
+                                           <tr>
+                                            <th></th>
+                                             <th>Actual</td>
+                                             <th>Budget</td>
+                                             <th>Actual</td>
+                                             <th>Budget</td>
+                                             <th>Actual</td>
+                                             <th>Budget</td>
+                                           </tr>
+                                         </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!--Card Body-->
+                            <!--Card Footer-->
+                            
+                            <div class="col-12 card-layout-footer  d-flex justify-content-between align-items-center">
+                                <div class="d-inline-flex align-items-center">
+                                    <div>
+                                        <span>Show</span>
+                                    </div>
+                                    <div>
+                                        <select name="example_length" class="form-control dropdown">
+                                            <option value="2">&nbsp;5&nbsp;</option>
+                                            <option>10</option>
+                                            <option>15</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-inline-flex align-items-center">
+                                   <div><btn class="btn"><span class="fa fa-angle-left"></span></btn></div>
+                                   <div>1 of 10</div>
+                                   <div><btn class="btn"><span class="fa fa-angle-right"></span></btn></div>
+                                </div>
+                            </div>
+                            <!--Card Footer-->
+                        </div>
+                    </div>
+                </div>
                 <!-- Table Layout Card End-->
+                
                 <!-- Chart Group 1-->
                 <div class="row cards">
                     <div class="container-fluid p-0">
                         <div class="row">
                             <!--Char column 1-->
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <div class="col-12 card-layout p-0 explorer-enabled" id="{modal-fullscreen}">
+                                <div class="col-12 card-layout p-0 explorer-enabled" >
                                     <div class="row modal-base">
                                         <div class="col-12 modal-master">
                                             <!--Card -header-->
@@ -349,7 +417,7 @@
                             <!-- Chart Column 1 End-->
                             <!-- Chart Column 2 -->
                             <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6">
-                                <div class="col-12 card-layout p-0 explorer-enabled" id="{modal-fullscreen}">
+                                <div class="col-12 card-layout p-0 explorer-enabled" >
                                     <div class="row modal-base">
                                         <div class="col-12 modal-master">
                                             <!--Card -header-->
@@ -382,7 +450,7 @@
                         <div class="row">
                             <!--Char column 3-->
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <div class="col-12 card-layout p-0 explorer-enabled " id="{modal-fullscreen}">
+                                <div class="col-12 card-layout p-0 explorer-enabled " >
                                     <div class="row modal-base">
                                         <div class="col-12 modal-master">
                                             <!--Card -header-->
@@ -407,21 +475,21 @@
                             <!-- Chart Column 1 End-->
                             <!-- Chart Column 4 -->
                             <div class="col-sm-12 pt-3 pt-sm-3 pt-md-0 col-md-6 col-lg-6">
-                                <div class="col-12 card-layout p-0 explorer-enabled" id="{modal-fullscreen}">
+                                <div class="col-12 card-layout p-0 explorer-enabled" >
                                     <div class="row modal-base">
                                         <div class="col-12 modal-master">
                                             <!--Card -header-->
                                             <div class="col-12 card-layout-header d-flex justify-content-between align-items-center">
-                                                <div><span class="h2">Pivot Table</span></div>
+                                                <div><span class="h2">Map</span></div>
                                                 <div>
                                                     <btn class="explore_fullview"><span class="explore-icon fa fa-arrows-alt"></span></btn>
                                                 </div>
                                             </div>
                                             <!--Card header-->
                                             <!--Card Body-->
-                                            <div class="col-12 card-body-charts h-100 justify-content-center">
-                                                <div class="charts">
-                                                    <div id="map-chart" style="width:100px;height:100px;" ></div>
+                                            <div class="col-12 card-body-charts d-flex justify-content-center">
+                                                <div class="charts d-flex">
+                                                    <div id="map-chart" style="min-width: 100%; height: 100%;"></div>
                                                 </div>
                                             </div>
                                             <!--Card Body-->
@@ -447,6 +515,11 @@
              </div>
             <!--Mobile View Sidebar Toggler-->
     </div>
+    <!-- dtatables -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+    
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/bootstrap.min.js"></script>
     <script src="plugins/select2/select.min.js"></script>
@@ -462,6 +535,8 @@
     <!-- Charts Import-->
         <script type="text/javascript" src="plugins/jquery/moment.min.js"></script>
         <script type="text/javascript" src="plugins/daterangepicker/date_range_picker.min.js"></script>
+    <!-- Datatables -->
+        <script type="text/javascript" src="plugins/datatable/datatables.min.js"></script>
     <!-- jq widgets-->
         <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxcore.js"></script>
         <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxdata.js"></script> 
@@ -472,6 +547,7 @@
         <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxpivot.js"></script> 
         <script type="text/javascript" src="plugins/jqwidgets/jqwidgets/jqxpivotgrid.js"></script>
         <script type="text/Javascript" src="assets/js/jqwidgets.js"></script>
+        
     <!-- jq widgets-->
     <script>
         ///Common Header and sidebar loaded dynamically
@@ -490,6 +566,14 @@
             $('#sidebar').fadeOut();
             $(".mobile-view-toggler-on").show();
         });
+        $(".report-toggler").click(function(){
+           $(".report-card").toggle();
+           var state='180deg';
+           $(".report-toggler").css({
+                transform: 'rotate(-180deg)',
+                 transition: 'transform .1s'
+               })
+        })
         $(".explore_fullview").click(function(event){
             ///full screen logic
             var index = $('.explore_fullview').index(this);
